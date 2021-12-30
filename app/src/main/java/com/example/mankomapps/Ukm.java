@@ -33,7 +33,7 @@ public class Ukm extends AppCompatActivity implements View.OnClickListener {
         bki = (Button) findViewById(R.id.bki);
         imkk = (Button) findViewById(R.id.imkk);
         kj21 = (Button) findViewById(R.id.kj21);
-        radioland = (Button) findViewById(R.id.radio);
+        radioland = (Button) findViewById(R.id.radioland);
         majalah = (Button) findViewById(R.id.majalah);
         senisunda = (Button) findViewById(R.id.senisunda);
 

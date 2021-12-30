@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView visimisi, akreditasi, profillulusan, tujuan, sejarah, struktur, stafprodi, fasilitas;
+    private CardView visimisi, akreditasi, profillulusan, tujuan, sejarah, struktur, stafprodi, fasilitas, alamat, email;
     private Button matkul, hima, ukm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         matkul = (Button) findViewById(R.id.matkul);
         hima = (Button) findViewById(R.id.hima);
         ukm = (Button) findViewById(R.id.ukm);
+        alamat = (CardView) findViewById(R.id.alamat);
+        email = (CardView) findViewById(R.id.email);
 
         //add click listener to the cards
         visimisi.setOnClickListener(this);
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         matkul.setOnClickListener(this);
         hima.setOnClickListener(this);
         ukm.setOnClickListener(this);
+        alamat.setOnClickListener(this);
+        email.setOnClickListener(this);
     }
 
     @Override
@@ -70,6 +75,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i = new Intent(this,HimpunanMahasiswa.class);startActivity(i); break;
             case R.id.ukm:
                 i = new Intent(this,Ukm.class);startActivity(i); break;
+            case R.id.alamat:
+                String url1 = "https://goo.gl/maps/YyA3UEeXZWM1fehL9";
+                i = new Intent(Intent.ACTION_VIEW); i.setData(Uri.parse(url1));startActivity(i);break;
+            case R.id.email:
+                String url2 = "mailto:kaprodi.mankom@unpad.ac.id";
+                i = new Intent(Intent.ACTION_VIEW); i.setData(Uri.parse(url2));startActivity(i);break;
             default:break;
         }
     }
